@@ -51,6 +51,7 @@ Nominationroute.get("/getuserbyid/:id" , async(req,res) => {
       user.dataValues.VIDEO = `https://memberdoc.ycea.in/MEMBERSHIP/${STATE_CODE}/OM/${MEMBER_ID}/${MEMBER_ID}.mp4`;
       user.dataValues.Caste_Certificate = `https://memberdoc.ycea.in/MEMBERSHIP/${STATE_CODE}/OM/${MEMBER_ID}/${MEMBER_ID}_CATEGORY_DOC.jpg`
       user.dataValues.BPL_CERTIFICATE = `https://memberdoc.ycea.in/MEMBERSHIP/${STATE_CODE}/OM/${MEMBER_ID}/${MEMBER_ID}_BPL_CARD_DOC.jpg`
+      user.dataValues.CRIMINAL_CASE_DOC = `https://memberdoc.ycea.in/MEMBERSHIP/${STATE_CODE}/OM/${MEMBER_ID}/${MEMBER_ID}_CASE_DOC.jpg`
       // console.log(user)
       res.status(200).send(user);
     } catch (error) {
@@ -209,6 +210,7 @@ Nominationroute.patch("/update/:id", authMiddleware ,async(req,res)=>{
             user.dataValues.VIDEO = `https://memberdoc.ycea.in/MEMBERSHIP/${STATE_CODE}/OM/${MEMBER_ID}/${MEMBER_ID}.mp4`;
             user.dataValues.Caste_Certificate = `https://memberdoc.ycea.in/MEMBERSHIP/${STATE_CODE}/OM/${MEMBER_ID}/${MEMBER_ID}_CATEGORY_DOC.jpg`
             user.dataValues.BPL_CERTIFICATE = `https://memberdoc.ycea.in/MEMBERSHIP/${STATE_CODE}/OM/${MEMBER_ID}/${MEMBER_ID}_BPL_CARD_DOC.jpg`
+            user.dataValues.CRIMINAL_CASE_DOC = `https://memberdoc.ycea.in/MEMBERSHIP/${STATE_CODE}/OM/${MEMBER_ID}/${MEMBER_ID}_CASE_DOC.jpg`
             res.status(200).json (user);
         }else{
             res.status(400).json({message : "No one present with the id"});
